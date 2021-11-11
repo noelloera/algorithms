@@ -1,15 +1,46 @@
-//Example 1
+//Example 1: Linear Time Complexity Function
 //Create a function which will add up all the numbers leading up to that parameter number
-function sumUp(n) {
+function sumUpLinear(n) {
   //Creates a variable which stores the starting total value of the sum at zero
-  let sum = 0;
+  let result = 0;
   //Loops each time the variable i is less than or equal to the n parameter
-  for (let i = 1; 1 <= n; i++) {
+  for (let i = 1; i <= n; i++) {
     //Short hand way of adding the value of sum with the current loop value of i and storing back in sum
-    sum = sum + i;
+    result = result + i;
   }
   //Returns the sum of all the numbers it took to get to the parameter number
-  return sum;
+  return result;
 }
+//Writting the same function using ES6
+const sumUpLinearES6 = (n) => {
+  let result = 0;
+  for (let i = 1; i <= n; i++) {
+    result = result + i;
+  }
+  return result;
+};
+let start,
+  end = 0;
+console.log(
+  `Linear Time Complexity Function:
+  \nThe performance system timestamp is starting \ntimestamp: ${(start =
+    performance.now())} \nresult: ${sumUpLinear(
+    100000000
+  )} \nending timestamp:${(end = performance.now())} \ntime difference is: ${
+    end - start
+  }\n`
+);
 
-console.log(sumUp(3));
+//Example 2: Constant Time Complexity Function
+function sumUpConstant(n) {
+  return (n / 2) * (1 + n);
+}
+console.log(
+  `Constant Time Complexity Function:
+  \nThe performance system timestamp is starting \ntimestamp: ${(start =
+    performance.now())} \nresult: ${sumUpConstant(
+    100000000
+  )} \nending timestamp:${(end = performance.now())} \ntime difference is: ${
+    end - start
+  }\n`
+);
