@@ -23,8 +23,7 @@ let start,
   end = 0;
 console.log(
   `Linear Time Complexity Function:
-  \nThe performance system timestamp is starting \ntimestamp: ${(start =
-    performance.now())} \nresult: ${sumUpLinear(
+  \nstarting timestamp: ${(start = performance.now())} \nresult: ${sumUpLinear(
     100000000
   )} \nending timestamp:${(end = performance.now())} \ntime difference is: ${
     end - start
@@ -37,10 +36,28 @@ function sumUpConstant(n) {
 }
 console.log(
   `Constant Time Complexity Function:
-  \nThe performance system timestamp is starting \ntimestamp: ${(start =
+  \nstarting timestamp: ${(start =
     performance.now())} \nresult: ${sumUpConstant(
     100000000
   )} \nending timestamp:${(end = performance.now())} \ntime difference is: ${
+    end - start
+  }\n`
+);
+
+//Understanding Time Complexity Problems
+function arraySum(arr) {
+  let result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    result = result + arr[i];
+  }
+  return result;
+}
+
+console.log(
+  `Linear Time Complexity Function:
+  \nstarting timestamp: ${(start = performance.now())} \nresult: ${arraySum([
+    1, 23, 123, 67,
+  ])} \nending timestamp:${(end = performance.now())} \ntime difference is: ${
     end - start
   }\n`
 );
