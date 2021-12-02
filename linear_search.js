@@ -1,18 +1,17 @@
 //The function will return the index in which the target value if found, else return none
 function linear_search(list, target) {
   for (let i = 0; i < list.length; i++) {
-    //Constant time operation
-
+    //Constant time operation, with a strict equality comparison
     if (list[i] === target) {
       return i;
     }
   }
   //After it completes cycling through each value if not found then return string none
-  return "none";
+  return null;
 }
 
 function verify(index) {
-  if (index !== "none") console.log(`target found at index ${index}`);
+  if (index) console.log(`target found at index ${index}`);
   else console.log("target not found");
 }
 
