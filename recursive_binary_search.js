@@ -6,7 +6,9 @@ function recursive_binary_search(list, target) {
     if (list[midpoint] === target) {
       return true;
     } else {
+      //This is the part of the function which will call itself until a value is returned making it a recursion
       if (list[midpoint] < target) {
+        //The stopping condition is often called the base case
         return recursive_binary_search(list.slice(midpoint + 1), target);
       } else {
         return recursive_binary_search(list.slice(0, midpoint - 1), target);
