@@ -52,9 +52,17 @@ function merge(left, right) {
     merged_list.push(right[j]);
     j += 1;
   }
+  console.log(merged_list);
   return merged_list;
+}
+
+function verify_sorted(list) {
+  if (list.length == 0 || list.length == 1) return true;
+  return list[0] < list[1] && verify_sorted(list.slice(1));
 }
 
 let list1 = [23, 12, 11, 3, 5, 90, 34, 19, 2];
 let sorted = merge_sort(list1);
 console.log(sorted);
+console.log(verify_sorted(sorted));
+console.log(verify_sorted(list1));
