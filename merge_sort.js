@@ -5,6 +5,8 @@ function merge_sort(list) {
     -Divide: find the midpoint of the list and divide into sublists
     -Conquer: Sort the sublists made in the previous step
     -Combine: Merge the sorted sublists created in the previous step
+    -Space Complexity: Linear Space O(n)
+    -Time Complexity: O(n log n)
      */
   if (list.length <= 1) {
     return list;
@@ -18,6 +20,7 @@ function split(list) {
   /*
     -Divides the provided list into two sublists at the midpoint
     -Returns two sublists - left and right
+    -Takes O(log n) which is logarithmic time
      */
   let midpoint = Math.floor(list.length / 2);
   //Slice will not include the last index but instead the one prior
@@ -31,6 +34,7 @@ function split(list) {
 function merge(left, right) {
   /*
     -Will take as an argument the left and right sublists, compare the values and sort them 
+    -Runs in overall linear O(n)
      */
   let merged_list = [];
   let i = 0;
